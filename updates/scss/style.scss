@@ -1,0 +1,55 @@
+@import "compass/css3";
+
+.container {
+
+    @include transform-style(preserve-3d);
+    @include perspective(750px);
+
+    width: 400px;
+    height: 200px;
+    
+    position: relative;
+    margin: 3em auto;
+
+}
+
+.card {
+    @include transform-style(preserve-3d);
+    width: 100%;
+    height: 100%;
+}
+
+.face {
+    background: #ccc;
+    position: absolute;
+    display: none;
+    text-align: center;
+    
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    @include backface-visibility(hidden);
+}
+
+
+.face:nth-child(2n) {
+    @include transform(rotateX(180deg));
+}
+
+
+.face:nth-child(1) {
+   background: teal; 
+}
+.face:nth-child(2) {
+   background: orange; 
+}
+.face:nth-child(3) {
+   background: crimson; 
+}
+.face:nth-child(4) {
+   background: cornflowerblue; 
+}
+
+
+
+
